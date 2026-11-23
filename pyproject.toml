@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gridded-pop-validation"
+version = "0.1.0"
+description = "Accuracy validation, MSE error decomposition, pixel-alignment auditing, and census-anchored bias calibration for gridded population datasets."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+authors = [
+    { name = "Chong Wang" },
+]
+keywords = [
+    "gridded-population",
+    "WorldPop",
+    "LandScan",
+    "GPW",
+    "spatial-validation",
+    "demography",
+    "geospatial",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: GIS",
+]
+dependencies = [
+    "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+gridded-pop-validate = "gridded_pop_validation.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Trayton/gridded-pop-validation"
+Repository = "https://github.com/Trayton/gridded-pop-validation"
+Issues = "https://github.com/Trayton/gridded-pop-validation/issues"
+
+[tool.setuptools.packages.find]
+include = ["gridded_pop_validation*"]
